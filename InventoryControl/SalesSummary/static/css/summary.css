@@ -1,0 +1,175 @@
+/* SalesSummary.css */
+
+/* Head Style*/
+h1 {
+    text-align: center;
+    padding: 13px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #dbdbdb;
+    margin-bottom: 20px; /* Added space below heading */
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #848789;
+}
+
+/* Form container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.formc{
+    padding-left: 610px;
+}
+
+/* Label styles */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input styles */
+input[type="text"],
+select {
+    width: 250px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input[type="date"] {
+    width: 232px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+
+/* Styling the button for returning to home */
+.gbutton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    margin-left: 48px;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from the button */
+}
+
+
+
+/* Hover effect for the button */
+.gbutton:hover {
+    background-color: #191C20;
+    text-decoration: none;
+}
+
+
+.returnbtn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    margin-left: 20px;
+    background-color: #000000;
+    color: #fff;
+    text-decoration: none;
+
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.returnbtn:hover {
+    background-color: #191C20;
+    text-decoration: none;
+}
+
+.rbtn{
+    justify-content: end;
+}
+
+
+
+/*Summary*/
+
+/* Summary container */
+.summary {
+    margin-top: 20px;
+    width: 700px;
+    margin-left: 390px;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 7px;
+    background-color: #71797E;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.salehead{
+    padding-left: 145px;
+}
+
+
+/* Summary heading */
+.summary h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Summary details */
+.summary p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Date wise sales list */
+.summary ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+/* Date wise sales item */
+.summary ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Transactions list */
+.summary ul.transactions {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+/* Transaction item */
+.summary ul.transactions li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}

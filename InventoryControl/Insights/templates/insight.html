@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insights</title>
+    <link rel="stylesheet" href="../static/css/insights.css">
+</head>
+
+<body>
+
+    <div>
+        <h1 class="Head">Insights</h1>
+    </div>
+    
+    <div class="transactable">
+    <h1 class="titles">Transaction Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Gender</th>
+                <th>Age Category</th>
+                <th>Product Name</th>
+                <th>Product Category</th>
+                <th>Payment Type</th>
+                <!-- Add other fields as required -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.transactionid }}</td>
+                <td>{{ transaction.name }}</td>
+                <td>{{ transaction.phn }}</td>
+                <td>{{ transaction.gender }}</td>
+                <td>{{ transaction.age_category }}</td>
+                <td>{{ transaction.pname }}</td>
+                <td>{{ transaction.pcategory }}</td>
+                <td>{{ transaction.paymenttype }}</td>
+                <!-- Add other fields as required -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="NearbyEP">
+    <h1 class="titles">Nearby Expiry Products</h1>
+    
+    {% if nearby_expiry_products %}
+    <ul>
+        {% for product in nearby_expiry_products %}
+            <li>{{ product.product_name }} - Expiry Date: {{ product.expiry }}</li>
+            <!-- Display other product details as needed -->
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Currently There are No Nearby Expiry Products in the Inventory.</p>
+{% endif %} <hr>
+
+
+
+    <h1 class="expired">EXPIRED!!</h1>
+  <ul>
+    {% for product in expired_products %}
+        <li>{{ product.product_name }} - Expiry Date: {{ product.expiry }} </li>
+        <!-- Display other product details as needed -->
+    {% endfor %}
+</ul>
+</div>
+
+
+    <br>
+<button><a href="../Home"> Return to Home </a></button>
+</body>
+</html>

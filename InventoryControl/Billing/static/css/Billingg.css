@@ -1,0 +1,124 @@
+/* Billing.css */
+
+
+
+/* Head Style*/
+h1 {
+    text-align: center;
+    padding: 13px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #dbdbdb;
+    margin-bottom: 20px; /* Added space below heading */
+    
+
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #848789;
+}
+
+/* Form container */
+.row {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label styles */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input styles */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Select styles */
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Return to Home button styles */
+button a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+
+/* Styling the button for returning to home */
+.Rbtn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    margin-left: 20px;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from the button */
+}
+
+/* Styling the link inside the button */
+.Rbtn a {
+    color: inherit; /* Inherit the color from the button */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+/* Hover effect for the button */
+.Rbtn:hover {
+    background-color: #191C20;
+    text-decoration: none;
+}
+
+.Tbtn{
+    background-color: #000000;
+    text-decoration: none;
+}
+
+.Tbtn:hover {
+    background-color: #191C20;
+    text-decoration: none;
+}

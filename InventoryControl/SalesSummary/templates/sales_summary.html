@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Summary</title>
+    <link rel="stylesheet" href="../static/css/summary.css">
+</head>
+<body>
+    <h1>Sales Summary</h1>
+
+    <div class="formc">
+        <form method="get" action="{% url 'sales_summary' %}">
+            <label for="summary_type">Select Summary Type:</label>
+            <select id="summary_type" name="summary_type">
+                <option value="daily" {% if summary_type == 'daily' %} selected {% endif %}>Daily</option>
+                <option value="weekly" {% if summary_type == 'weekly' %} selected {% endif %}>Weekly</option>
+                <option value="monthly" {% if summary_type == 'monthly' %} selected {% endif %}>Monthly</option>
+            </select>
+            <br><br>
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" value="{{ selected_date }}">
+            <br><br>
+            <button class="gbutton" type="submit">Generate Summary</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="summary">
+
+    {% if sales_summary_data %}
+        <h2 class="salehead">Summary for {{ summary_type|title }} - {{ selected_date }}</h2><hr>
+        <p>Number of UPI Payments: {{ upi_payments }}</p>
+        <p>Number of Cash Payments: {{ cash_payments }}</p>
+        <p>Number of Card Payments: {{ card_payments }}</p>
+        {% if summary_type != 'daily' %} <hr>
+            <h3>Date Wise Sales:</h3>
+            <ul>
+                {% for date, sales in daily_sales.items %}
+                    <li>{{ date }}: ₹{{ sales }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <h3>Transactions:</h3>
+        <ul>
+            {% for transaction in transactions %}
+                <li>Transaction Id: {{ transaction.transactionid }} - {{ transaction.paymenttype }} - {{ transaction.name }} [₹{{ transaction.price }}]</li>
+            {% endfor %}
+        </ul>
+        <hr><h3>Total Sales: ₹{{ sales_summary_data.total_sales }}</h3><hr>
+    {% else %}
+        <p>No sales data available for the selected date.</p>
+    {% endif %}
+
+</div>
+
+
+<br>
+
+</body>
+<div class="rbtn">
+<button class="returnbtn"><a href="../Home"> Return to Home </a></button>
+</div>
+</html>

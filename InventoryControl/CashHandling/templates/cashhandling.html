@@ -1,0 +1,62 @@
+<!-- cash_register/templates/cash_register/cashhandling.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/cash.css">
+    <title>Cash Handling</title>
+</head>
+<body>
+    <h1>Cash Handling</h1>
+    <div class="cash_inputs">
+    <center>
+    <form method="post">
+        {% csrf_token %}
+        <label for="starting_cash">Starting Cash Value:</label>
+        <input type="number" id="starting_cash" name="starting_cash" step="0.01">
+        <button type="submit" name="action" value="start">Save Starting Cash</button>
+        <br><br>
+        <label for="ending_cash">Ending Cash Value:</label>
+        <input type="number" id="ending_cash" name="ending_cash" step="0.01">
+        <button type="submit" name="action" value="end">Save Ending Cash</button>
+    </form>
+</center>
+</div>
+<br>
+
+    <hr>
+    <div class="cashdetails">
+
+        <center>
+
+    <h2>Cash Details for {{ current_date }}</h2>
+    <p>Starting Cash: {% if starting_cash %} ₹{{ starting_cash }}  {% else %} Not Entered {% endif %}</p>
+    <p>Ending Cash: {% if ending_cash %} ₹{{ ending_cash }} {% else %} Not Entered {% endif %}</p>
+</center>
+
+    </div>
+
+    <hr>
+
+  
+
+    <div class="deviations">
+        <center>
+            <h2>Cash Deviations</h2>
+    <p>Total Cash Sales - Yesterday: ₹{{ total_cash_sales_previous_date }}</p>
+    <p>Opening - InHand Cash: ₹{{ starting_cash }}</p>
+    <p>Starting Cash Deviation: ₹{{ starting_cash_deviation }}</p><br>
+
+    <p>Total Cash Sales - Today: ₹{{ total_cash_sales_current_date }}</p>
+    <p>Closing - InHand Cash: ₹{{ ending_cash }}</p>
+    <p>Ending Cash Deviation: ₹{{ ending_cash_deviation }}</p>
+    <br><hr><br>
+</center>
+
+</div>
+
+    <button class="rtnbtn"><a href="../Home"> Return to Home </a></button>
+</body>
+</html>

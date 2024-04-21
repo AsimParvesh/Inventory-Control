@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link rel="stylesheet" href="../static/css/Billingg.css">
+    <!-- Add any necessary Razorpay script imports here -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <div id="Head">
+        <h1>Billing</h1>
+    </div>
+
+    <form method="post" id="billingForm" class="row" action="{% url 'Billing' %}">
+        {% csrf_token %}
+        <!-- Your form fields -->
+        <div class="form-group">
+            <label for="id_name">Name:</label>
+            <input type="text" id="id_name" name="name" placeholder="Enter Name">
+        </div>
+    
+        <div class="form-group">
+            <label for="id_phn">Phone Number:</label>
+            <input type="text" id="id_phn" name="phn">
+        </div>
+    
+        <div class="form-group">
+            <label for="id_gender">Gender:</label><br>
+            <select id="id_gender" name="gender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="id_age_category">Age Category:</label>
+            <select id="id_age_category" name="age_category">
+                <option value="Kids">Kids</option>
+                <option value="Youth">Youth</option>
+                <option value="Adults">Adults</option>
+                <option value="Middle-Aged">Middle-Aged</option>
+                <option value="Elderly">Elderly</option>
+            </select>
+        </div>
+    
+        <!-- Add placeholders for other fields here -->
+        
+        <div class="form-group">
+            <label for="id_pname">Product Name:</label>
+            <select id="id_pname" name="pname">
+                {% for product in product_names %}
+                    <option value="{{ product }}">{{ product }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="id_pcategory">Product Category:</label>
+            <select id="id_pcategory" name="pcategory">
+                {% for category in product_categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="id_price">Price:</label>
+            <input type="text" id="id_price" name="price">
+        </div>
+    
+        <div class="form-group">
+            <label for="id_paymenttype">Payment Type:</label><br>
+            <select id="id_paymenttype" name="paymenttype">
+                <option value="Cash">Cash</option>
+                <option value="UPI">UPI</option>
+                <option value="Card">Card</option>
+            </select>
+        </div>
+    
+        <div id="razorpaySection" style="display: none;">
+            <!-- Razorpay payment section -->
+            <!-- Include Razorpay payment fields here -->
+            <button type="button" id="customRazorpayBtn">Pay with Razorpay</button>
+        </div>
+
+        <button style="margin-top:8px" type="submit" class="Tbtn">TRANSACT</button>
+    </form>
+
+    <br>
+    <button class="Rbtn"><a href="../Home"> Return to Home </a></button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var paymentTypeSelect = document.getElementById("id_paymenttype");
+            var razorpaySection = document.getElementById("razorpaySection");
+
+            paymentTypeSelect.addEventListener("change", function() {
+                if (paymentTypeSelect.value === "UPI") {
+                    razorpaySection.style.display = "block";
+                } else {
+                    razorpaySection.style.display = "none";
+                }
+            });
+
+            document.getElementById("customRazorpayBtn").addEventListener("click", function() {
+                var options = {
+                    "key": "rzp_test_KoPpsQKbIRrTsm",
+                    "amount": 5000, // Amount in paise
+                    "currency": "INR",
+                    "order_id": "{{ order_response.id }}",
+                    "name": "Meenakshi Stores",
+                    "description": "A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami",
+                    "image": "https://example.com/your_logo.jpg",
+                    "prefill": {
+                        "name": "Gaurav Kumar",
+                        "email": "gaurav.kumar@example.com"
+                    },
+                    "theme": {
+                        "color": "blue"
+                    },
+                    "handler": function(response) {
+                        // Add logic to handle payment success
+                        console.log(response);
+                        // Redirect or perform other actions as needed
+                    },
+                    "modal": {
+                        "ondismiss": function() {
+                            // Add logic to handle modal dismiss
+                            console.log("Payment modal dismissed");
+                        }
+                    }
+                };
+
+                var rzp = new Razorpay(options);
+                rzp.open();
+            });
+        });
+    </script>
+</body>
+</html>

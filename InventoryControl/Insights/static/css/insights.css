@@ -1,0 +1,134 @@
+
+
+    /* Styles for Insights.html */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #848789;
+}
+
+
+.titles{
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.expired{
+    font-size: 25px;
+    background-color: #24262b;
+    padding: 10px;
+    width: fit-content;
+
+    color: red;
+}
+
+/* Heading styles */
+
+
+.Head {
+    text-align: center;
+    padding: 13px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #dbdbdb;
+    margin-bottom: 20px; /* Added space below heading */
+    
+
+}
+
+.transactable{
+    padding-left:40px;
+    padding-right:40px;
+    padding-top: 2px;
+    padding-bottom: 20px;
+}
+
+.NearbyEP{
+    padding-left:40px;
+    padding-right:40px;
+    padding-top: 2px;
+}
+
+p{
+    font-weight: 600;
+    width: fit-content;
+    background-color: #7b828e;
+    padding: 5px;
+    color: #24262b;
+    border-radius: 5px;
+}
+
+hr{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff; /* Added background color for table */
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    color: aliceblue;
+    background-color: #24262b;
+}
+tr:nth-child(even) {
+    background-color: #7b828e;
+}
+
+
+
+/* List styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+}
+
+/* Link button styles */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    margin-left: 20px;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from the button */
+}
+
+/* Link button hover effect */
+button:hover {
+    background-color: #191c20;
+}
+
+/* Link styles */
+button a {
+    color: inherit; /* Inherit the color from the button */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+/* Link hover effect */
+button a:hover {
+    text-decoration: none; /* Underline the link on hover */
+}
+

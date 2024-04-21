@@ -1,0 +1,71 @@
+<!-- inventory.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Inventory</title>
+    <link rel="stylesheet" href="../static/css/inventor.css">
+
+</head>
+
+<body>
+    <div id="Head">
+        <h1>Product Inventory</h1>
+    </div>
+    
+
+    <form id="form" method="GET" action="{% url 'Inventory' %}">
+
+      <span class="scan">
+        <label for="search_code">Scan Code:</label>
+        <input type="text" id="search_code" name="product_code">
+        <button class="btns" type="submit">GO</button>
+        <h5>Scan or Type your Product Code & Click GO to Search</h5>
+      </span>
+
+        <label for="search_name">Search by Name:</label>
+        <input type="text" id="search_name" name="q" placeholder="Enter product name">
+        <br><br>
+        <label for="search_category">Filter by Category:</label>
+        <select id="search_category" name="category">
+            <option value="">Select Category</option>
+            <!-- Assuming you have a list of categories -->
+            <option value="Stationery">Stationery</option>
+            <option value="Cosmetics">Cosmetics</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Dairy Products">Dairy Products</option>
+            <option value="Snacks">Snacks</option>
+            <!-- Add other categories dynamically or statically -->
+        </select>
+        <br>
+        <button class="sbtn" type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Product Code</th>
+                <th>Manufacture Date</th>
+                <th>Expiry Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.product_name }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.product_code }}</td>
+                <td>{{ product.manufacture }}</td>
+                <td>{{ product.expiry }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+<br>
+<button class="Rbtn"><a href="../Home"> Return to Home </a></button>
+
+</html>

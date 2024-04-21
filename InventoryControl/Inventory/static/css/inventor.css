@@ -1,0 +1,129 @@
+    /* Add your custom CSS styles here */
+    body {
+        font-family: Arial, sans-serif;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        background-color: #848789; /* Added background color */
+    }
+
+
+    h1 {
+        text-align: center;
+        padding: 13px;
+        
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: #dbdbdb;
+        margin-bottom: 20px; /* Added space below heading */
+        
+    
+    }
+
+
+    #form {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+        font-weight:bolder;
+        text-align: right; /* Center the form */
+    }
+
+    .scan{
+        float:left;
+    }
+
+    h5{
+        padding: 5px;
+        color: #24262b;
+        background-color: #7b828e;
+        border-radius: 4px;
+
+    }
+
+    
+    
+    label {
+        margin-right: 10px; /* Added space between label and input/select */
+    }
+    input[type="text"],
+    select {
+        padding: 6px 10px; /* Adjusted padding for inputs and selects */
+        border-radius: 4px; /* Added border-radius for inputs and selects */
+        border: 1px solid #ccc; /* Added border for inputs and selects */
+    }
+    button[type="submit"] {
+        padding: 8px 20px; /* Adjusted padding for submit button */
+        border-radius: 4px; /* Added border-radius for submit button */
+        border: none; /* Removed border for submit button */
+        background-color: #000000; /* Added background color for submit button */
+        color: #fff; /* Added text color for submit button */
+        cursor: pointer; /* Added pointer cursor for submit button */
+    }
+    button[type="submit"]:hover {
+        background-color: #191c20; /* Darker background color on hover for submit button */
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #ffffff; /* Added background color for table */
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        color: aliceblue;
+        background-color: #24262b;
+    }
+    tr:nth-child(even) {
+        background-color: #7b828e;
+    }
+
+    
+  
+    .btns{
+        background-color: #000000;
+        text-decoration: none;
+        margin-left: 3px;
+    }
+    
+    .btns:hover {
+        background-color: #191C20;
+        text-decoration: none;
+    }
+
+    .sbtn{
+        background-color: #000000;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+    
+    .sbtn:hover {
+        background-color: #191C20;
+        text-decoration: none;
+    }
+
+    .Rbtn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        background-color: #000000;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from the button */
+    }
+    
+    /* Styling the link inside the button */
+    .Rbtn a {
+        color: inherit; /* Inherit the color from the button */
+        text-decoration: none; /* Remove underline from the link */
+    }
+
+    /* Hover effect for the button */
+.Rbtn:hover {
+    background-color: #191C20;
+    text-decoration: none;
+}
