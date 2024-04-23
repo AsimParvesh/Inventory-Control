@@ -15,4 +15,4 @@ def login_user(request):
             return redirect('Logpage')
 
     else:
-        return render(request,'adminlog.html')      
+        return render(request,'index.html')      
